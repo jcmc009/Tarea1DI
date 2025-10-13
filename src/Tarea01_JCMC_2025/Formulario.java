@@ -6,10 +6,14 @@
 package Tarea01_JCMC_2025;
 
 import javax.swing.JOptionPane;
+import NuevoArticulo.Nuevo_Articulo;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 /**
  *
- * @author Jc
+ * @author José Carlos Manjón Carrasco
  */
 public class Formulario extends javax.swing.JDialog {
 
@@ -31,44 +35,41 @@ public class Formulario extends javax.swing.JDialog {
     private void initComponents() {
 
         buttonGroupCategoria = new javax.swing.ButtonGroup();
-        jLabelCodigoArticulo = new javax.swing.JLabel();
-        jLabelNombreArticulo = new javax.swing.JLabel();
         jLabelCategoria = new javax.swing.JLabel();
         jButtonGuardar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
-        jTextFieldCodigoArticulo = new javax.swing.JTextField();
         jLabelPrecioUnitario = new javax.swing.JLabel();
         jLabelStock = new javax.swing.JLabel();
-        jLabelProveedor = new javax.swing.JLabel();
-        jLabelFechaEntrada = new javax.swing.JLabel();
         jLabelGarantia = new javax.swing.JLabel();
         jLabelEstadoArticulo = new javax.swing.JLabel();
         jLabelCompatibilidad = new javax.swing.JLabel();
         jLabelDescripcionDetallada = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jTextFieldNombreArticulo = new javax.swing.JTextField();
         jRadioButton12Meses = new javax.swing.JRadioButton();
         jRadioButton24Meses = new javax.swing.JRadioButton();
         jRadioButtonSinGarantia = new javax.swing.JRadioButton();
         jCheckBoxNuevo = new javax.swing.JCheckBox();
         jCheckBoxReacondicionado = new javax.swing.JCheckBox();
         jCheckBoxOfertaEspecial = new javax.swing.JCheckBox();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jListCategoria = new javax.swing.JList();
         jCheckBoxCompaWindows = new javax.swing.JCheckBox();
         jCheckBoxCompaUbuntu = new javax.swing.JCheckBox();
-        jTextFieldProveedor = new javax.swing.JTextField();
-        jTextFieldFechaEntrada = new javax.swing.JTextField();
         jTextFieldPrecioUnitario = new javax.swing.JTextField();
         jTextFieldStockDisponible = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        jLabelCodigoArticulo = new javax.swing.JLabel();
+        jLabelNombreArticulo = new javax.swing.JLabel();
+        jTextFieldCodigoArticulo = new javax.swing.JTextField();
+        jTextFieldNombreArticulo = new javax.swing.JTextField();
+        jTextFieldProveedor = new javax.swing.JTextField();
+        jLabelFechaEntrada = new javax.swing.JLabel();
+        jLabelProveedor = new javax.swing.JLabel();
+        jSpinnerFechaEntrada = new javax.swing.JSpinner();
+        jComboBoxCategoria = new javax.swing.JComboBox();
         jCheckBoxCompaDebian = new javax.swing.JCheckBox();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
-        jLabelCodigoArticulo.setText("Código del artículo");
-
-        jLabelNombreArticulo.setText("Nombre del artículo");
 
         jLabelCategoria.setText("Categoría");
 
@@ -89,10 +90,6 @@ public class Formulario extends javax.swing.JDialog {
         jLabelPrecioUnitario.setText("Precio unitario");
 
         jLabelStock.setText("Stock disponible");
-
-        jLabelProveedor.setText("Proveedor");
-
-        jLabelFechaEntrada.setText("Fecha de entrada");
 
         jLabelGarantia.setText("Garantía");
 
@@ -121,16 +118,66 @@ public class Formulario extends javax.swing.JDialog {
 
         jCheckBoxOfertaEspecial.setText("Oferta especial");
 
-        jListCategoria.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Ordenador", "Portátil", "Monitor", "Impresora", "Accesorio", "Componente interno", "Otro" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane3.setViewportView(jListCategoria);
-
         jCheckBoxCompaWindows.setText("Windows");
 
         jCheckBoxCompaUbuntu.setText("Ubuntu");
+
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+
+        jLabelCodigoArticulo.setText("Código del artículo");
+
+        jLabelNombreArticulo.setText("Nombre del artículo");
+
+        jLabelFechaEntrada.setText("Fecha de entrada");
+
+        jLabelProveedor.setText("Proveedor");
+
+        jSpinnerFechaEntrada.setModel(new javax.swing.SpinnerDateModel());
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelCodigoArticulo)
+                    .addComponent(jLabelNombreArticulo))
+                .addGap(32, 32, 32)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextFieldNombreArticulo, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
+                    .addComponent(jTextFieldCodigoArticulo))
+                .addGap(59, 59, 59)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelFechaEntrada)
+                    .addComponent(jLabelProveedor))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextFieldProveedor)
+                    .addComponent(jSpinnerFechaEntrada))
+                .addGap(54, 54, 54))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(6, 6, 6)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabelCodigoArticulo)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldCodigoArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelFechaEntrada)))
+                    .addComponent(jSpinnerFechaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelNombreArticulo)
+                    .addComponent(jTextFieldNombreArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelProveedor)
+                    .addComponent(jTextFieldProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jComboBoxCategoria.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ordenador", "Portátil", "Monitor", "Impresora", "Accesorio", "Componente interno", "Otro" }));
 
         jCheckBoxCompaDebian.setText("Debian");
 
@@ -139,150 +186,111 @@ public class Formulario extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
+                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelCompatibilidad)
                             .addComponent(jLabelEstadoArticulo))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(43, 43, 43)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(27, 27, 27)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabelProveedor)
-                                                    .addComponent(jLabelFechaEntrada))
-                                                .addGap(41, 41, 41)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(jTextFieldFechaEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
-                                                    .addComponent(jTextFieldProveedor)))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabelPrecioUnitario)
-                                                    .addComponent(jLabelStock))
-                                                .addGap(48, 48, 48)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(jTextFieldPrecioUnitario, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
-                                                    .addComponent(jTextFieldStockDisponible)))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabelGarantia)
-                                                .addGap(59, 59, 59)
-                                                .addComponent(jRadioButton12Meses)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jRadioButton24Meses)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jRadioButtonSinGarantia))))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jCheckBoxCompaWindows)
-                                            .addComponent(jCheckBoxNuevo))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jCheckBoxReacondicionado)
-                                            .addComponent(jCheckBoxCompaUbuntu))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jCheckBoxOfertaEspecial))))
+                                .addGap(357, 357, 357)
+                                .addComponent(jButtonGuardar))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jButtonGuardar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButtonCancelar)))
-                        .addGap(209, 215, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jCheckBoxNuevo)
+                                    .addComponent(jCheckBoxCompaWindows))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jCheckBoxReacondicionado)
+                                    .addComponent(jCheckBoxCompaUbuntu))
+                                .addGap(33, 33, 33)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jCheckBoxOfertaEspecial)
+                                    .addComponent(jCheckBoxCompaDebian))
+                                .addGap(75, 75, 75)))
+                        .addGap(41, 41, 41)
+                        .addComponent(jButtonCancelar)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelCodigoArticulo)
-                                    .addComponent(jLabelNombreArticulo))
-                                .addGap(37, 37, 37)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextFieldCodigoArticulo, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
-                                    .addComponent(jTextFieldNombreArticulo)))
+                                .addComponent(jLabelDescripcionDetallada)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jLabelDescripcionDetallada)
-                                        .addGap(36, 36, 36))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabelCategoria)
-                                        .addGap(54, 54, 54)))
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                    .addComponent(jLabelStock)
+                                    .addComponent(jLabelPrecioUnitario))
+                                .addGap(36, 36, 36)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextFieldPrecioUnitario, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                                    .addComponent(jTextFieldStockDisponible)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabelCategoria)
+                                .addGap(34, 34, 34)
+                                .addComponent(jComboBoxCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(98, 98, 98)
+                                .addComponent(jLabelGarantia)
+                                .addGap(39, 39, 39)
+                                .addComponent(jRadioButton12Meses)
+                                .addGap(18, 18, 18)
+                                .addComponent(jRadioButton24Meses)
+                                .addGap(18, 18, 18)
+                                .addComponent(jRadioButtonSinGarantia)))
+                        .addContainerGap(50, Short.MAX_VALUE))))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jSeparator1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelCodigoArticulo)
-                    .addComponent(jTextFieldCodigoArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelProveedor)
-                    .addComponent(jTextFieldProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelNombreArticulo)
-                            .addComponent(jTextFieldNombreArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelFechaEntrada)
-                            .addComponent(jTextFieldFechaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelCategoria)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelCompatibilidad)
-                            .addComponent(jCheckBoxCompaWindows)
-                            .addComponent(jCheckBoxCompaUbuntu))
-                        .addGap(20, 20, 20))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(32, 32, 32)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabelGarantia)
-                                    .addComponent(jRadioButton12Meses)
-                                    .addComponent(jRadioButton24Meses)
-                                    .addComponent(jRadioButtonSinGarantia))
-                                .addGap(28, 28, 28)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabelPrecioUnitario)
-                                    .addComponent(jTextFieldPrecioUnitario, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addComponent(jLabelStock))
-                                    .addComponent(jTextFieldStockDisponible))
-                                .addGap(30, 30, 30))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                .addGap(18, 18, 18)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jCheckBoxNuevo)
-                            .addComponent(jCheckBoxReacondicionado)
-                            .addComponent(jCheckBoxOfertaEspecial)
-                            .addComponent(jLabelEstadoArticulo))
-                        .addGap(66, 66, 66)))
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelGarantia)
+                    .addComponent(jRadioButton12Meses)
+                    .addComponent(jRadioButton24Meses)
+                    .addComponent(jRadioButtonSinGarantia)
+                    .addComponent(jLabelCategoria)
+                    .addComponent(jComboBoxCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
+                        .addGap(178, 178, 178)
+                        .addComponent(jLabelCompatibilidad)
+                        .addGap(33, 33, 33)
                         .addComponent(jLabelDescripcionDetallada)
-                        .addGap(7, 7, 7)
+                        .addGap(44, 44, 44)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButtonGuardar)
-                            .addComponent(jButtonCancelar)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                            .addComponent(jButtonCancelar))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelPrecioUnitario)
+                            .addComponent(jTextFieldPrecioUnitario, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldStockDisponible, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelStock))
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelEstadoArticulo)
+                            .addComponent(jCheckBoxNuevo)
+                            .addComponent(jCheckBoxReacondicionado)
+                            .addComponent(jCheckBoxOfertaEspecial))
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jCheckBoxCompaWindows)
+                            .addComponent(jCheckBoxCompaUbuntu)
+                            .addComponent(jCheckBoxCompaDebian))
+                        .addGap(27, 27, 27)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45))))
         );
 
         pack();
@@ -310,7 +318,18 @@ public class Formulario extends javax.swing.JDialog {
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
-        // TODO add your handling code here:
+        //Nuevo_Articulo(String codigoArticulo, String nombreArticulo, String proveedor, String descripcionDetallada, float precioUnitario, int stockDisponible, Date fechaEntrada)
+        LocalDate fechaEntrada;
+        Nuevo_Articulo nuevo_Articulo = new Nuevo_Articulo(
+                "A001", // códigoArticulo
+                "Monitor 24\"", // nombreArticulo
+                "ProveedorTech", // proveedor
+                "Monitor LED Full HD", // descripcionDetallada
+                129.99f, // precioUnitario
+                15, // stockDisponible
+                fechaEntrada = LocalDate.now() // fechaEntrada
+        );
+        System.out.println(nuevo_Articulo.toString());
     }//GEN-LAST:event_jButtonGuardarActionPerformed
 
     /**
@@ -365,6 +384,7 @@ public class Formulario extends javax.swing.JDialog {
     public javax.swing.JCheckBox jCheckBoxNuevo;
     public javax.swing.JCheckBox jCheckBoxOfertaEspecial;
     public javax.swing.JCheckBox jCheckBoxReacondicionado;
+    public javax.swing.JComboBox jComboBoxCategoria;
     public javax.swing.JLabel jLabelCategoria;
     public javax.swing.JLabel jLabelCodigoArticulo;
     public javax.swing.JLabel jLabelCompatibilidad;
@@ -376,15 +396,15 @@ public class Formulario extends javax.swing.JDialog {
     public javax.swing.JLabel jLabelPrecioUnitario;
     public javax.swing.JLabel jLabelProveedor;
     public javax.swing.JLabel jLabelStock;
-    public javax.swing.JList jListCategoria;
+    public javax.swing.JPanel jPanel1;
     public javax.swing.JRadioButton jRadioButton12Meses;
     public javax.swing.JRadioButton jRadioButton24Meses;
     public javax.swing.JRadioButton jRadioButtonSinGarantia;
     public javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JScrollPane jScrollPane3;
+    public javax.swing.JSeparator jSeparator1;
+    public javax.swing.JSpinner jSpinnerFechaEntrada;
     public javax.swing.JTextArea jTextArea1;
     public javax.swing.JTextField jTextFieldCodigoArticulo;
-    public javax.swing.JTextField jTextFieldFechaEntrada;
     public javax.swing.JTextField jTextFieldNombreArticulo;
     public javax.swing.JTextField jTextFieldPrecioUnitario;
     public javax.swing.JTextField jTextFieldProveedor;

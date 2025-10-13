@@ -9,7 +9,7 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author Jc
+ * @author José Carlos Manjón Carrasco
  */
 public class PantallaPrincipal extends javax.swing.JFrame {
 
