@@ -30,19 +30,42 @@ public class Formulario extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        buttonGroupCategoria = new javax.swing.ButtonGroup();
+        jLabelCodigoArticulo = new javax.swing.JLabel();
+        jLabelNombreArticulo = new javax.swing.JLabel();
+        jLabelCategoria = new javax.swing.JLabel();
         jButtonGuardar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jLabelPrecioUnitario = new javax.swing.JLabel();
+        jLabelStock = new javax.swing.JLabel();
+        jLabelProveedor = new javax.swing.JLabel();
+        jLabelFechaEntrada = new javax.swing.JLabel();
+        jLabelGarantia = new javax.swing.JLabel();
+        jLabelEstadoArticulo = new javax.swing.JLabel();
+        jLabelCompatibilidad = new javax.swing.JLabel();
+        jLabelDescripcionDetallada = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jTextField3 = new javax.swing.JTextField();
+        jRadioButton12Meses = new javax.swing.JRadioButton();
+        jRadioButton24Meses = new javax.swing.JRadioButton();
+        jRadioButtonSinGarantia = new javax.swing.JRadioButton();
+        jCheckBoxNuevo = new javax.swing.JCheckBox();
+        jCheckBoxReacondicionado = new javax.swing.JCheckBox();
+        jCheckBoxOfertaEspecial = new javax.swing.JCheckBox();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jListCategoria = new javax.swing.JList();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setText("jLabel1");
+        jLabelCodigoArticulo.setText("Código del artículo");
 
-        jLabel2.setText("jLabel2");
+        jLabelNombreArticulo.setText("Nombre del artículo");
 
-        jLabel3.setText("jLabel3");
+        jLabelCategoria.setText("Categoría");
 
         jButtonGuardar.setText("Guardar");
         jButtonGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -58,38 +81,179 @@ public class Formulario extends javax.swing.JDialog {
             }
         });
 
+        jLabelPrecioUnitario.setText("Precio unitario");
+
+        jLabelStock.setText("Stock disponible");
+
+        jLabelProveedor.setText("Proveedor");
+
+        jLabelFechaEntrada.setText("Fecha de entrada");
+
+        jLabelGarantia.setText("Garantía");
+
+        jLabelEstadoArticulo.setText("Estado del artículo");
+
+        jLabelCompatibilidad.setText("Compatibilidad");
+
+        jLabelDescripcionDetallada.setText("Descripción detallada");
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        buttonGroupCategoria.add(jRadioButton12Meses);
+        jRadioButton12Meses.setText("12 meses");
+
+        buttonGroupCategoria.add(jRadioButton24Meses);
+        jRadioButton24Meses.setText("24 meses");
+
+        buttonGroupCategoria.add(jRadioButtonSinGarantia);
+        jRadioButtonSinGarantia.setText("Sin Garantía");
+
+        jCheckBoxNuevo.setText("Nuevo");
+
+        jCheckBoxReacondicionado.setText("Reacondicionado");
+
+        jCheckBoxOfertaEspecial.setText("Oferta especial");
+
+        jListCategoria.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Ordenador", "Portátil", "Monitor", "Impresora", "Accesorio", "Componente interno", "Otro" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane3.setViewportView(jListCategoria);
+
+        jCheckBox1.setText("jCheckBox1");
+
+        jCheckBox2.setText("jCheckBox2");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
+                .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(181, Short.MAX_VALUE)
-                .addComponent(jButtonGuardar)
-                .addGap(35, 35, 35)
-                .addComponent(jButtonCancelar)
-                .addGap(33, 33, 33))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelCompatibilidad)
+                            .addComponent(jLabelEstadoArticulo))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jButtonGuardar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButtonCancelar))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(27, 27, 27)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabelProveedor)
+                                            .addComponent(jLabelFechaEntrada)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabelGarantia)
+                                                .addGap(59, 59, 59)
+                                                .addComponent(jRadioButton12Meses)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jRadioButton24Meses)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jRadioButtonSinGarantia))
+                                            .addComponent(jLabelPrecioUnitario)
+                                            .addComponent(jLabelStock)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jCheckBox1)
+                                            .addComponent(jCheckBoxNuevo))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jCheckBoxReacondicionado)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jCheckBoxOfertaEspecial))
+                                            .addComponent(jCheckBox2))))))
+                        .addGap(209, 215, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelCodigoArticulo)
+                                    .addComponent(jLabelNombreArticulo))
+                                .addGap(37, 37, 37)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
+                                    .addComponent(jTextField3)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabelDescripcionDetallada)
+                                        .addGap(36, 36, 36))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabelCategoria)
+                                        .addGap(54, 54, 54)))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addGap(68, 68, 68)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonGuardar)
-                    .addComponent(jButtonCancelar))
-                .addContainerGap(68, Short.MAX_VALUE))
+                    .addComponent(jLabelCodigoArticulo)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelProveedor))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelNombreArticulo)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jLabelFechaEntrada)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabelGarantia)
+                                    .addComponent(jRadioButton12Meses)
+                                    .addComponent(jRadioButton24Meses)
+                                    .addComponent(jRadioButtonSinGarantia))
+                                .addGap(34, 34, 34)
+                                .addComponent(jLabelPrecioUnitario)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                                .addComponent(jLabelStock))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jCheckBoxNuevo)
+                            .addComponent(jCheckBoxReacondicionado)
+                            .addComponent(jCheckBoxOfertaEspecial)
+                            .addComponent(jLabelEstadoArticulo))
+                        .addGap(28, 28, 28))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabelCategoria)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelCompatibilidad)
+                    .addComponent(jCheckBox1)
+                    .addComponent(jCheckBox2))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(jLabelDescripcionDetallada)
+                        .addGap(7, 7, 7)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButtonGuardar)
+                            .addComponent(jButtonCancelar)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         pack();
@@ -105,11 +269,12 @@ public class Formulario extends javax.swing.JDialog {
         );
 
         if (opcion == JOptionPane.YES_OPTION) {
-            // System.out.println("El usuario decidió salir sin guardar.");
+
             setVisible(false); // cerramos modal
 
         } else {
-            //       // Aquí puedes cancelar el cierre System.out.println("El usuario decidió quedarse.");
+            jTextField1.setText("");
+            //  aquí se cierra formulario 
 
         }
 
@@ -162,10 +327,33 @@ public class Formulario extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroupCategoria;
     private javax.swing.JButton jButtonCancelar;
     private javax.swing.JButton jButtonGuardar;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBoxNuevo;
+    private javax.swing.JCheckBox jCheckBoxOfertaEspecial;
+    private javax.swing.JCheckBox jCheckBoxReacondicionado;
+    private javax.swing.JLabel jLabelCategoria;
+    private javax.swing.JLabel jLabelCodigoArticulo;
+    private javax.swing.JLabel jLabelCompatibilidad;
+    private javax.swing.JLabel jLabelDescripcionDetallada;
+    private javax.swing.JLabel jLabelEstadoArticulo;
+    private javax.swing.JLabel jLabelFechaEntrada;
+    private javax.swing.JLabel jLabelGarantia;
+    private javax.swing.JLabel jLabelNombreArticulo;
+    private javax.swing.JLabel jLabelPrecioUnitario;
+    private javax.swing.JLabel jLabelProveedor;
+    private javax.swing.JLabel jLabelStock;
+    private javax.swing.JList jListCategoria;
+    private javax.swing.JRadioButton jRadioButton12Meses;
+    private javax.swing.JRadioButton jRadioButton24Meses;
+    private javax.swing.JRadioButton jRadioButtonSinGarantia;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
