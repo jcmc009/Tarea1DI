@@ -36,7 +36,7 @@ public class Formulario extends javax.swing.JDialog {
         jLabelCategoria = new javax.swing.JLabel();
         jButtonGuardar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        jTextFieldCodigoArticulo = new javax.swing.JTextField();
         jLabelPrecioUnitario = new javax.swing.JLabel();
         jLabelStock = new javax.swing.JLabel();
         jLabelProveedor = new javax.swing.JLabel();
@@ -47,7 +47,7 @@ public class Formulario extends javax.swing.JDialog {
         jLabelDescripcionDetallada = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jTextField3 = new javax.swing.JTextField();
+        jTextFieldNombreArticulo = new javax.swing.JTextField();
         jRadioButton12Meses = new javax.swing.JRadioButton();
         jRadioButton24Meses = new javax.swing.JRadioButton();
         jRadioButtonSinGarantia = new javax.swing.JRadioButton();
@@ -56,8 +56,13 @@ public class Formulario extends javax.swing.JDialog {
         jCheckBoxOfertaEspecial = new javax.swing.JCheckBox();
         jScrollPane3 = new javax.swing.JScrollPane();
         jListCategoria = new javax.swing.JList();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
+        jCheckBoxCompaWindows = new javax.swing.JCheckBox();
+        jCheckBoxCompaUbuntu = new javax.swing.JCheckBox();
+        jTextFieldProveedor = new javax.swing.JTextField();
+        jTextFieldFechaEntrada = new javax.swing.JTextField();
+        jTextFieldPrecioUnitario = new javax.swing.JTextField();
+        jTextFieldStockDisponible = new javax.swing.JTextField();
+        jCheckBoxCompaDebian = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -123,9 +128,11 @@ public class Formulario extends javax.swing.JDialog {
         });
         jScrollPane3.setViewportView(jListCategoria);
 
-        jCheckBox1.setText("jCheckBox1");
+        jCheckBoxCompaWindows.setText("Windows");
 
-        jCheckBox2.setText("jCheckBox2");
+        jCheckBoxCompaUbuntu.setText("Ubuntu");
+
+        jCheckBoxCompaDebian.setText("Debian");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -138,21 +145,30 @@ public class Formulario extends javax.swing.JDialog {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelCompatibilidad)
                             .addComponent(jLabelEstadoArticulo))
-                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButtonGuardar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButtonCancelar))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
+                                .addGap(43, 43, 43)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(27, 27, 27)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabelProveedor)
-                                            .addComponent(jLabelFechaEntrada)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabelProveedor)
+                                                    .addComponent(jLabelFechaEntrada))
+                                                .addGap(41, 41, 41)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(jTextFieldFechaEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                                                    .addComponent(jTextFieldProveedor)))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabelPrecioUnitario)
+                                                    .addComponent(jLabelStock))
+                                                .addGap(48, 48, 48)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(jTextFieldPrecioUnitario, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                                                    .addComponent(jTextFieldStockDisponible)))
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jLabelGarantia)
                                                 .addGap(59, 59, 59)
@@ -160,20 +176,22 @@ public class Formulario extends javax.swing.JDialog {
                                                 .addGap(18, 18, 18)
                                                 .addComponent(jRadioButton24Meses)
                                                 .addGap(18, 18, 18)
-                                                .addComponent(jRadioButtonSinGarantia))
-                                            .addComponent(jLabelPrecioUnitario)
-                                            .addComponent(jLabelStock)))
+                                                .addComponent(jRadioButtonSinGarantia))))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jCheckBox1)
+                                            .addComponent(jCheckBoxCompaWindows)
                                             .addComponent(jCheckBoxNuevo))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jCheckBoxReacondicionado)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jCheckBoxOfertaEspecial))
-                                            .addComponent(jCheckBox2))))))
+                                            .addComponent(jCheckBoxReacondicionado)
+                                            .addComponent(jCheckBoxCompaUbuntu))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jCheckBoxOfertaEspecial))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jButtonGuardar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButtonCancelar)))
                         .addGap(209, 215, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,8 +201,8 @@ public class Formulario extends javax.swing.JDialog {
                                     .addComponent(jLabelNombreArticulo))
                                 .addGap(37, 37, 37)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
-                                    .addComponent(jTextField3)))
+                                    .addComponent(jTextFieldCodigoArticulo, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
+                                    .addComponent(jTextFieldNombreArticulo)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -202,21 +220,32 @@ public class Formulario extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelCodigoArticulo)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelProveedor))
+                    .addComponent(jTextFieldCodigoArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelProveedor)
+                    .addComponent(jTextFieldProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelNombreArticulo)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jTextFieldNombreArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jLabelFechaEntrada)))
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelFechaEntrada)
+                            .addComponent(jTextFieldFechaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabelCategoria)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelCompatibilidad)
+                            .addComponent(jCheckBoxCompaWindows)
+                            .addComponent(jCheckBoxCompaUbuntu))
+                        .addGap(20, 20, 20))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(32, 32, 32)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -224,26 +253,26 @@ public class Formulario extends javax.swing.JDialog {
                                     .addComponent(jRadioButton12Meses)
                                     .addComponent(jRadioButton24Meses)
                                     .addComponent(jRadioButtonSinGarantia))
-                                .addGap(34, 34, 34)
-                                .addComponent(jLabelPrecioUnitario)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                                .addComponent(jLabelStock))
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                        .addGap(36, 36, 36)
+                                .addGap(28, 28, 28)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabelPrecioUnitario)
+                                    .addComponent(jTextFieldPrecioUnitario, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(jLabelStock))
+                                    .addComponent(jTextFieldStockDisponible))
+                                .addGap(30, 30, 30))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jCheckBoxNuevo)
                             .addComponent(jCheckBoxReacondicionado)
                             .addComponent(jCheckBoxOfertaEspecial)
                             .addComponent(jLabelEstadoArticulo))
-                        .addGap(28, 28, 28))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelCategoria)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelCompatibilidad)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox2))
-                .addGap(18, 18, 18)
+                        .addGap(66, 66, 66)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(19, 19, 19)
@@ -273,7 +302,7 @@ public class Formulario extends javax.swing.JDialog {
             setVisible(false); // cerramos modal
 
         } else {
-            jTextField1.setText("");
+            jTextFieldCodigoArticulo.setText("");
             //  aquí se cierra formulario 
 
         }
@@ -327,33 +356,38 @@ public class Formulario extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroupCategoria;
-    private javax.swing.JButton jButtonCancelar;
-    private javax.swing.JButton jButtonGuardar;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBoxNuevo;
-    private javax.swing.JCheckBox jCheckBoxOfertaEspecial;
-    private javax.swing.JCheckBox jCheckBoxReacondicionado;
-    private javax.swing.JLabel jLabelCategoria;
-    private javax.swing.JLabel jLabelCodigoArticulo;
-    private javax.swing.JLabel jLabelCompatibilidad;
-    private javax.swing.JLabel jLabelDescripcionDetallada;
-    private javax.swing.JLabel jLabelEstadoArticulo;
-    private javax.swing.JLabel jLabelFechaEntrada;
-    private javax.swing.JLabel jLabelGarantia;
-    private javax.swing.JLabel jLabelNombreArticulo;
-    private javax.swing.JLabel jLabelPrecioUnitario;
-    private javax.swing.JLabel jLabelProveedor;
-    private javax.swing.JLabel jLabelStock;
-    private javax.swing.JList jListCategoria;
-    private javax.swing.JRadioButton jRadioButton12Meses;
-    private javax.swing.JRadioButton jRadioButton24Meses;
-    private javax.swing.JRadioButton jRadioButtonSinGarantia;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
+    public javax.swing.ButtonGroup buttonGroupCategoria;
+    public javax.swing.JButton jButtonCancelar;
+    public javax.swing.JButton jButtonGuardar;
+    public javax.swing.JCheckBox jCheckBoxCompaDebian;
+    public javax.swing.JCheckBox jCheckBoxCompaUbuntu;
+    public javax.swing.JCheckBox jCheckBoxCompaWindows;
+    public javax.swing.JCheckBox jCheckBoxNuevo;
+    public javax.swing.JCheckBox jCheckBoxOfertaEspecial;
+    public javax.swing.JCheckBox jCheckBoxReacondicionado;
+    public javax.swing.JLabel jLabelCategoria;
+    public javax.swing.JLabel jLabelCodigoArticulo;
+    public javax.swing.JLabel jLabelCompatibilidad;
+    public javax.swing.JLabel jLabelDescripcionDetallada;
+    public javax.swing.JLabel jLabelEstadoArticulo;
+    public javax.swing.JLabel jLabelFechaEntrada;
+    public javax.swing.JLabel jLabelGarantia;
+    public javax.swing.JLabel jLabelNombreArticulo;
+    public javax.swing.JLabel jLabelPrecioUnitario;
+    public javax.swing.JLabel jLabelProveedor;
+    public javax.swing.JLabel jLabelStock;
+    public javax.swing.JList jListCategoria;
+    public javax.swing.JRadioButton jRadioButton12Meses;
+    public javax.swing.JRadioButton jRadioButton24Meses;
+    public javax.swing.JRadioButton jRadioButtonSinGarantia;
+    public javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JScrollPane jScrollPane3;
+    public javax.swing.JTextArea jTextArea1;
+    public javax.swing.JTextField jTextFieldCodigoArticulo;
+    public javax.swing.JTextField jTextFieldFechaEntrada;
+    public javax.swing.JTextField jTextFieldNombreArticulo;
+    public javax.swing.JTextField jTextFieldPrecioUnitario;
+    public javax.swing.JTextField jTextFieldProveedor;
+    public javax.swing.JTextField jTextFieldStockDisponible;
     // End of variables declaration//GEN-END:variables
 }
