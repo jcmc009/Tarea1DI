@@ -7,9 +7,9 @@ package Tarea01_JCMC_2025;
 
 import javax.swing.JOptionPane;
 import NuevoArticulo.Nuevo_Articulo;
-import java.sql.Date;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+
+import java.util.Date;
+import javax.swing.ButtonModel;
 
 /**
  *
@@ -34,7 +34,7 @@ public class Formulario extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroupCategoria = new javax.swing.ButtonGroup();
+        buttonGroupGarantia = new javax.swing.ButtonGroup();
         jLabelCategoria = new javax.swing.JLabel();
         jButtonGuardar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
@@ -45,7 +45,7 @@ public class Formulario extends javax.swing.JDialog {
         jLabelCompatibilidad = new javax.swing.JLabel();
         jLabelDescripcionDetallada = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jTextAreaDescripcionDetallada = new javax.swing.JTextArea();
         jRadioButton12Meses = new javax.swing.JRadioButton();
         jRadioButton24Meses = new javax.swing.JRadioButton();
         jRadioButtonSinGarantia = new javax.swing.JRadioButton();
@@ -57,6 +57,7 @@ public class Formulario extends javax.swing.JDialog {
         jTextFieldPrecioUnitario = new javax.swing.JTextField();
         jTextFieldStockDisponible = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
+        label1 = new java.awt.Label();
         jLabelCodigoArticulo = new javax.swing.JLabel();
         jLabelNombreArticulo = new javax.swing.JLabel();
         jTextFieldCodigoArticulo = new javax.swing.JTextField();
@@ -65,6 +66,7 @@ public class Formulario extends javax.swing.JDialog {
         jLabelFechaEntrada = new javax.swing.JLabel();
         jLabelProveedor = new javax.swing.JLabel();
         jSpinnerFechaEntrada = new javax.swing.JSpinner();
+        jLabelTituloSeccion = new javax.swing.JLabel();
         jComboBoxCategoria = new javax.swing.JComboBox();
         jCheckBoxCompaDebian = new javax.swing.JCheckBox();
         jSeparator1 = new javax.swing.JSeparator();
@@ -74,6 +76,7 @@ public class Formulario extends javax.swing.JDialog {
         jLabelCategoria.setText("Categoría");
 
         jButtonGuardar.setText("Guardar");
+        jButtonGuardar.setToolTipText("Guardar");
         jButtonGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonGuardarActionPerformed(evt);
@@ -81,6 +84,7 @@ public class Formulario extends javax.swing.JDialog {
         });
 
         jButtonCancelar.setText("Cancelar");
+        jButtonCancelar.setToolTipText("Cancelar y borrar datos");
         jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCancelarActionPerformed(evt);
@@ -99,54 +103,106 @@ public class Formulario extends javax.swing.JDialog {
 
         jLabelDescripcionDetallada.setText("Descripción detallada");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jTextAreaDescripcionDetallada.setColumns(20);
+        jTextAreaDescripcionDetallada.setRows(5);
+        jTextAreaDescripcionDetallada.setToolTipText("Descripción detallada");
+        jScrollPane1.setViewportView(jTextAreaDescripcionDetallada);
 
-        buttonGroupCategoria.add(jRadioButton12Meses);
+        buttonGroupGarantia.add(jRadioButton12Meses);
         jRadioButton12Meses.setText("12 meses");
+        jRadioButton12Meses.setToolTipText("12 meses");
 
-        buttonGroupCategoria.add(jRadioButton24Meses);
+        buttonGroupGarantia.add(jRadioButton24Meses);
         jRadioButton24Meses.setText("24 meses");
+        jRadioButton24Meses.setToolTipText("24 meses");
 
-        buttonGroupCategoria.add(jRadioButtonSinGarantia);
+        buttonGroupGarantia.add(jRadioButtonSinGarantia);
         jRadioButtonSinGarantia.setText("Sin Garantía");
+        jRadioButtonSinGarantia.setToolTipText("Sin garantía");
 
         jCheckBoxNuevo.setText("Nuevo");
+        jCheckBoxNuevo.setToolTipText("Nuevo");
 
         jCheckBoxReacondicionado.setText("Reacondicionado");
+        jCheckBoxReacondicionado.setToolTipText("Reacondicionado");
 
         jCheckBoxOfertaEspecial.setText("Oferta especial");
+        jCheckBoxOfertaEspecial.setToolTipText("Oferta especial");
 
         jCheckBoxCompaWindows.setText("Windows");
+        jCheckBoxCompaWindows.setToolTipText("Windows");
 
         jCheckBoxCompaUbuntu.setText("Ubuntu");
+        jCheckBoxCompaUbuntu.setToolTipText("Ubuntu");
+
+        jTextFieldPrecioUnitario.setToolTipText("Precio por unidad");
+        jTextFieldPrecioUnitario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldPrecioUnitarioKeyTyped(evt);
+            }
+        });
+
+        jTextFieldStockDisponible.setToolTipText("Stock disponible");
+        jTextFieldStockDisponible.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldStockDisponibleKeyTyped(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+
+        label1.setText("Prueba");
 
         jLabelCodigoArticulo.setText("Código del artículo");
 
         jLabelNombreArticulo.setText("Nombre del artículo");
+
+        jTextFieldCodigoArticulo.setToolTipText("Código del articulo");
+        jTextFieldCodigoArticulo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldCodigoArticuloKeyTyped(evt);
+            }
+        });
+
+        jTextFieldNombreArticulo.setToolTipText("Nombre del artículo");
+        jTextFieldNombreArticulo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldNombreArticuloKeyTyped(evt);
+            }
+        });
+
+        jTextFieldProveedor.setToolTipText("Proveedor");
+        jTextFieldProveedor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldProveedorKeyTyped(evt);
+            }
+        });
 
         jLabelFechaEntrada.setText("Fecha de entrada");
 
         jLabelProveedor.setText("Proveedor");
 
         jSpinnerFechaEntrada.setModel(new javax.swing.SpinnerDateModel());
+        jSpinnerFechaEntrada.setToolTipText("Fecha de entrada");
+
+        jLabelTituloSeccion.setText("Código del artículo");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelCodigoArticulo)
-                    .addComponent(jLabelNombreArticulo))
-                .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextFieldNombreArticulo, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
-                    .addComponent(jTextFieldCodigoArticulo))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabelCodigoArticulo)
+                        .addGap(37, 37, 37)
+                        .addComponent(jTextFieldCodigoArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelNombreArticulo)
+                            .addComponent(jLabelTituloSeccion))
+                        .addGap(32, 32, 32)
+                        .addComponent(jTextFieldNombreArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(59, 59, 59)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelFechaEntrada)
@@ -160,26 +216,28 @@ public class Formulario extends javax.swing.JDialog {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabelCodigoArticulo)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldCodigoArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelFechaEntrada)))
+                .addContainerGap()
+                .addComponent(jLabelTituloSeccion)
+                .addGap(38, 38, 38)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelCodigoArticulo)
+                    .addComponent(jTextFieldCodigoArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelFechaEntrada)
                     .addComponent(jSpinnerFechaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelNombreArticulo)
                     .addComponent(jTextFieldNombreArticulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelProveedor)
                     .addComponent(jTextFieldProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(9, Short.MAX_VALUE))
         );
 
         jComboBoxCategoria.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Ordenador", "Portátil", "Monitor", "Impresora", "Accesorio", "Componente interno", "Otro" }));
+        jComboBoxCategoria.setToolTipText("Categoría");
 
         jCheckBoxCompaDebian.setText("Debian");
+        jCheckBoxCompaDebian.setToolTipText("Debian");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -220,26 +278,29 @@ public class Formulario extends javax.swing.JDialog {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelStock)
-                                    .addComponent(jLabelPrecioUnitario))
-                                .addGap(36, 36, 36)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextFieldPrecioUnitario, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
-                                    .addComponent(jTextFieldStockDisponible)))
-                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabelCategoria)
-                                .addGap(34, 34, 34)
+                                .addGap(50, 50, 50)
                                 .addComponent(jComboBoxCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(98, 98, 98)
+                                .addGap(86, 86, 86)
                                 .addComponent(jLabelGarantia)
-                                .addGap(39, 39, 39)
+                                .addGap(51, 51, 51)
                                 .addComponent(jRadioButton12Meses)
                                 .addGap(18, 18, 18)
                                 .addComponent(jRadioButton24Meses)
                                 .addGap(18, 18, 18)
-                                .addComponent(jRadioButtonSinGarantia)))
-                        .addContainerGap(50, Short.MAX_VALUE))))
+                                .addComponent(jRadioButtonSinGarantia))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabelPrecioUnitario)
+                                        .addGap(64, 64, 64))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabelStock)
+                                        .addGap(68, 68, 68)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextFieldPrecioUnitario, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                                    .addComponent(jTextFieldStockDisponible))))
+                        .addContainerGap(34, Short.MAX_VALUE))))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jSeparator1)
         );
@@ -316,21 +377,181 @@ public class Formulario extends javax.swing.JDialog {
         }
 
     }//GEN-LAST:event_jButtonCancelarActionPerformed
+    private boolean validarFormulario() {
+        String codigoArt = jTextFieldCodigoArticulo.getText();
+        String proveedor = jTextFieldProveedor.getText();
+        String precioUnitari = jTextFieldPrecioUnitario.getText();
+        if (codigoArt == null || "".equals(codigoArt)) {
+            JOptionPane.showMessageDialog(this, "El campo Código de articulo no puede estar vacío", "Error", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+        if (proveedor == null || "".equals(proveedor)) {
+            JOptionPane.showMessageDialog(this, "El campo Proveedor no puede estar vacío", "Error", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+        if (precioUnitari == null || "".equals(precioUnitari)) {
+            JOptionPane.showMessageDialog(this, "El campo Precio unitario no puede estar vacío", "Error", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+        try {
+            Integer.parseInt(jTextFieldStockDisponible.getText());
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "El campo Stock disponible debe ser un número entero", "Error", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+
+        return true;//si todo correcto
+    }
 
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
-        //Nuevo_Articulo(String codigoArticulo, String nombreArticulo, String proveedor, String descripcionDetallada, float precioUnitario, int stockDisponible, Date fechaEntrada)
-        LocalDate fechaEntrada;
-        Nuevo_Articulo nuevo_Articulo = new Nuevo_Articulo(
-                "A001", // códigoArticulo
-                "Monitor 24\"", // nombreArticulo
-                "ProveedorTech", // proveedor
-                "Monitor LED Full HD", // descripcionDetallada
-                129.99f, // precioUnitario
-                15, // stockDisponible
-                fechaEntrada = LocalDate.now() // fechaEntrada
+        float precioUnitario = Float.parseFloat(jTextFieldPrecioUnitario.getText());
+        int stockD = Integer.parseInt(jTextFieldStockDisponible.getText());
+        Date fecha = (Date) jSpinnerFechaEntrada.getValue();
+        java.sql.Date fechaConstructor = new java.sql.Date(fecha.getTime());
+        // Construcción del estado del artículo
+        StringBuilder estadoArticulo = new StringBuilder();
+        if (jCheckBoxNuevo.isSelected()) {
+            estadoArticulo.append(jCheckBoxNuevo.getText()).append(", ");
+        }
+        if (jCheckBoxReacondicionado.isSelected()) {
+            estadoArticulo.append(jCheckBoxReacondicionado.getText()).append(", ");
+        }
+        if (jCheckBoxOfertaEspecial.isSelected()) {
+            estadoArticulo.append(jCheckBoxOfertaEspecial.getText()).append(", ");
+        }
+        // Eliminar la coma final si existe
+        String estadoFinal = estadoArticulo.toString().trim().replaceAll(",\\s*$", "");
+// Validar que al menos uno esté seleccionado
+        if (estadoFinal.isEmpty()) {
+            JOptionPane.showMessageDialog(
+                    this,
+                    "Se debe seleccionar al menos un estado del artículo.",
+                    "Advertencia",
+                    JOptionPane.WARNING_MESSAGE
+            );
+        }
+
+        StringBuilder compatiArticulo = new StringBuilder();
+        if (jCheckBoxCompaWindows.isSelected()) {
+            compatiArticulo.append(jCheckBoxCompaWindows.getText()).append(", ");
+        }
+        if (jCheckBoxCompaUbuntu.isSelected()) {
+            compatiArticulo.append(jCheckBoxCompaUbuntu.getText()).append(", ");
+        }
+        if (jCheckBoxCompaDebian.isSelected()) {
+            compatiArticulo.append(jCheckBoxCompaDebian.getText()).append(", ");
+        }
+        // Eliminar la coma final si existe
+        String compatiArticuloFinal = compatiArticulo.toString().trim().replaceAll(",\\s*$", "");
+// Validar que al menos uno esté seleccionado
+        if (compatiArticuloFinal.isEmpty()) {
+            JOptionPane.showMessageDialog(
+                    this,
+                    "Se debe seleccionar al menos una compatibilidad.",
+                    "Advertencia",
+                    JOptionPane.WARNING_MESSAGE
+            );
+        }
+        String garantiaSeleccionada = "";
+        jRadioButton12Meses.setActionCommand("12 meses");
+        jRadioButton24Meses.setActionCommand("24 meses");
+        jRadioButtonSinGarantia.setActionCommand("sin garantía");
+        try {
+            ButtonModel garantiaArticulo = buttonGroupGarantia.getSelection();
+            if (garantiaArticulo != null) {
+                garantiaSeleccionada = garantiaArticulo.getActionCommand();
+//                System.out.println("Seleccionado: " + garantiaSeleccionada.trim());
+            } else {
+                JOptionPane.showMessageDialog(
+                        this,
+                        "Debes seleccionar una opción de garantía.",
+                        "Advertencia",
+                        JOptionPane.WARNING_MESSAGE
+                );
+            }
+        } catch (java.lang.NullPointerException e) {
+            e.getMessage();
+        }
+
+        Nuevo_Articulo articuloEjemplo = new Nuevo_Articulo(
+                jTextFieldCodigoArticulo.getText(), // códigoArticulo
+                jTextFieldNombreArticulo.getText(),
+                (String) jComboBoxCategoria.getSelectedItem(), // categoría
+                precioUnitario, // precioUnitario
+                stockD, // stockDisponible
+                jTextFieldProveedor.getText(),//proveedor
+                fechaConstructor,// fechaEntrada
+                garantiaSeleccionada, // garantía en meses
+                estadoFinal, // estadoArticulo
+                compatiArticuloFinal, // compatibilidad
+                jTextAreaDescripcionDetallada.getText()
         );
-        System.out.println(nuevo_Articulo.toString());
+        System.out.println(articuloEjemplo.toString());
+
+        if (validarFormulario()) {
+            JOptionPane.showMessageDialog(this, "Formulario correcto");
+            dispose();// no válido, ya que cierra la ventana diréctamente sin hacer limpiado
+        }
     }//GEN-LAST:event_jButtonGuardarActionPerformed
+
+    private void jTextFieldStockDisponibleKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldStockDisponibleKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+            evt.consume();
+// Muestra mensaje de advertencia
+            JOptionPane.showMessageDialog(this,
+                    "Solo se permiten números enteros en el campo de stock.",
+                    "Entrada inválida",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+
+    }//GEN-LAST:event_jTextFieldStockDisponibleKeyTyped
+
+    private void jTextFieldCodigoArticuloKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCodigoArticuloKeyTyped
+        // Verifica si ya hay 10 caracteres
+        if (jTextFieldCodigoArticulo.getText().length() >= 10) {
+            evt.consume();
+            JOptionPane.showMessageDialog(this,
+                    "El código de artículo no puede tener más de 10 dígitos.",
+                    "Límite alcanzado",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_jTextFieldCodigoArticuloKeyTyped
+
+    private void jTextFieldNombreArticuloKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldNombreArticuloKeyTyped
+        if (jTextFieldCodigoArticulo.getText().length() >= 50) {
+            evt.consume();
+            JOptionPane.showMessageDialog(this,
+                    "El nombre de artículo no puede tener más de 50 dígitos.",
+                    "Límite alcanzado",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_jTextFieldNombreArticuloKeyTyped
+
+    private void jTextFieldProveedorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldProveedorKeyTyped
+        if (jTextFieldCodigoArticulo.getText().length() >= 30) {
+            evt.consume();
+            JOptionPane.showMessageDialog(this,
+                    "El proveedor no puede tener más de 30 dígitos.",
+                    "Límite alcanzado",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_jTextFieldProveedorKeyTyped
+
+    private void jTextFieldPrecioUnitarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldPrecioUnitarioKeyTyped
+        //la coma/ punto del decimal este código hace no pueda usarse
+        char c = evt.getKeyChar();
+        // if (!Character.isDigit(c) && c != '.' && c != ',') {
+        if (!Character.isDigit(c)) {
+            evt.consume();
+// Muestra mensaje de advertencia
+            JOptionPane.showMessageDialog(this,
+                    "Solo se permiten números con dos decimlaes en el campo de Precio unitario.",
+                    "Entrada inválida",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_jTextFieldPrecioUnitarioKeyTyped
 
     /**
      * @param args the command line arguments
@@ -346,16 +567,21 @@ public class Formulario extends javax.swing.JDialog {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Formulario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Formulario.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Formulario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Formulario.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Formulario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Formulario.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Formulario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Formulario.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -375,7 +601,7 @@ public class Formulario extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.ButtonGroup buttonGroupCategoria;
+    public javax.swing.ButtonGroup buttonGroupGarantia;
     public javax.swing.JButton jButtonCancelar;
     public javax.swing.JButton jButtonGuardar;
     public javax.swing.JCheckBox jCheckBoxCompaDebian;
@@ -396,6 +622,7 @@ public class Formulario extends javax.swing.JDialog {
     public javax.swing.JLabel jLabelPrecioUnitario;
     public javax.swing.JLabel jLabelProveedor;
     public javax.swing.JLabel jLabelStock;
+    public javax.swing.JLabel jLabelTituloSeccion;
     public javax.swing.JPanel jPanel1;
     public javax.swing.JRadioButton jRadioButton12Meses;
     public javax.swing.JRadioButton jRadioButton24Meses;
@@ -403,11 +630,13 @@ public class Formulario extends javax.swing.JDialog {
     public javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JSeparator jSeparator1;
     public javax.swing.JSpinner jSpinnerFechaEntrada;
-    public javax.swing.JTextArea jTextArea1;
+    public javax.swing.JTextArea jTextAreaDescripcionDetallada;
     public javax.swing.JTextField jTextFieldCodigoArticulo;
     public javax.swing.JTextField jTextFieldNombreArticulo;
     public javax.swing.JTextField jTextFieldPrecioUnitario;
     public javax.swing.JTextField jTextFieldProveedor;
     public javax.swing.JTextField jTextFieldStockDisponible;
+    public java.awt.Label label1;
     // End of variables declaration//GEN-END:variables
+
 }

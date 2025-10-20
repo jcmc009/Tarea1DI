@@ -2,7 +2,7 @@
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
   <NonVisualComponents>
-    <Component class="javax.swing.ButtonGroup" name="buttonGroupCategoria">
+    <Component class="javax.swing.ButtonGroup" name="buttonGroupGarantia">
     </Component>
   </NonVisualComponents>
   <Properties>
@@ -71,31 +71,36 @@
                               <Component id="jScrollPane1" min="-2" pref="256" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabelStock" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabelPrecioUnitario" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jTextFieldPrecioUnitario" pref="72" max="32767" attributes="0"/>
-                                  <Component id="jTextFieldStockDisponible" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabelCategoria" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                               <Component id="jComboBoxCategoria" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                               <Component id="jLabelGarantia" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                               <Component id="jRadioButton12Meses" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jRadioButton24Meses" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jRadioButtonSinGarantia" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabelPrecioUnitario" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jLabelStock" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jTextFieldPrecioUnitario" pref="72" max="32767" attributes="0"/>
+                                  <Component id="jTextFieldStockDisponible" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
-                      <EmptySpace pref="50" max="32767" attributes="0"/>
+                      <EmptySpace pref="34" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -173,6 +178,7 @@
     <Component class="javax.swing.JButton" name="jButtonGuardar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Guardar"/>
+        <Property name="toolTipText" type="java.lang.String" value="Guardar"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonGuardarActionPerformed"/>
@@ -181,6 +187,7 @@
     <Component class="javax.swing.JButton" name="jButtonCancelar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
+        <Property name="toolTipText" type="java.lang.String" value="Cancelar y borrar datos"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCancelarActionPerformed"/>
@@ -223,10 +230,11 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTextArea" name="jTextArea1">
+        <Component class="javax.swing.JTextArea" name="jTextAreaDescripcionDetallada">
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
+            <Property name="toolTipText" type="java.lang.String" value="Descripci&#xf3;n detallada"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -234,55 +242,75 @@
     <Component class="javax.swing.JRadioButton" name="jRadioButton12Meses">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="buttonGroupCategoria"/>
+          <ComponentRef name="buttonGroupGarantia"/>
         </Property>
         <Property name="text" type="java.lang.String" value="12 meses"/>
+        <Property name="toolTipText" type="java.lang.String" value="12 meses"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButton24Meses">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="buttonGroupCategoria"/>
+          <ComponentRef name="buttonGroupGarantia"/>
         </Property>
         <Property name="text" type="java.lang.String" value="24 meses"/>
+        <Property name="toolTipText" type="java.lang.String" value="24 meses"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jRadioButtonSinGarantia">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
-          <ComponentRef name="buttonGroupCategoria"/>
+          <ComponentRef name="buttonGroupGarantia"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Sin Garant&#xed;a"/>
+        <Property name="toolTipText" type="java.lang.String" value="Sin garant&#xed;a"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jCheckBoxNuevo">
       <Properties>
         <Property name="text" type="java.lang.String" value="Nuevo"/>
+        <Property name="toolTipText" type="java.lang.String" value="Nuevo"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jCheckBoxReacondicionado">
       <Properties>
         <Property name="text" type="java.lang.String" value="Reacondicionado"/>
+        <Property name="toolTipText" type="java.lang.String" value="Reacondicionado"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jCheckBoxOfertaEspecial">
       <Properties>
         <Property name="text" type="java.lang.String" value="Oferta especial"/>
+        <Property name="toolTipText" type="java.lang.String" value="Oferta especial"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jCheckBoxCompaWindows">
       <Properties>
         <Property name="text" type="java.lang.String" value="Windows"/>
+        <Property name="toolTipText" type="java.lang.String" value="Windows"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jCheckBoxCompaUbuntu">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ubuntu"/>
+        <Property name="toolTipText" type="java.lang.String" value="Ubuntu"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldPrecioUnitario">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Precio por unidad"/>
+      </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextFieldPrecioUnitarioKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldStockDisponible">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Stock disponible"/>
+      </Properties>
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextFieldStockDisponibleKeyTyped"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
@@ -295,15 +323,20 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabelCodigoArticulo" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabelNombreArticulo" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jTextFieldNombreArticulo" pref="101" max="32767" attributes="0"/>
-                      <Component id="jTextFieldCodigoArticulo" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jLabelCodigoArticulo" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                          <Component id="jTextFieldCodigoArticulo" min="-2" pref="101" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabelNombreArticulo" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelTituloSeccion" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="jTextFieldNombreArticulo" min="-2" pref="101" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -322,30 +355,33 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jLabelCodigoArticulo" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                              <Component id="jTextFieldCodigoArticulo" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
-                              <Component id="jLabelFechaEntrada" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Component id="jSpinnerFechaEntrada" min="-2" pref="28" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabelTituloSeccion" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabelCodigoArticulo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextFieldCodigoArticulo" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="jLabelFechaEntrada" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jSpinnerFechaEntrada" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabelNombreArticulo" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jTextFieldNombreArticulo" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabelProveedor" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jTextFieldProveedor" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="9" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
+        <Component class="java.awt.Label" name="label1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Prueba"/>
+          </Properties>
+        </Component>
         <Component class="javax.swing.JLabel" name="jLabelCodigoArticulo">
           <Properties>
             <Property name="text" type="java.lang.String" value="C&#xf3;digo del art&#xed;culo"/>
@@ -357,10 +393,28 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldCodigoArticulo">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="C&#xf3;digo del articulo"/>
+          </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextFieldCodigoArticuloKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldNombreArticulo">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Nombre del art&#xed;culo"/>
+          </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextFieldNombreArticuloKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldProveedor">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Proveedor"/>
+          </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextFieldProveedorKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelFechaEntrada">
           <Properties>
@@ -377,6 +431,12 @@
             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
               <SpinnerModel initial="now" stepSize="5" type="date"/>
             </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Fecha de entrada"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelTituloSeccion">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="C&#xf3;digo del art&#xed;culo"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -394,11 +454,13 @@
             <StringItem index="6" value="Otro"/>
           </StringArray>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Categor&#xed;a"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jCheckBoxCompaDebian">
       <Properties>
         <Property name="text" type="java.lang.String" value="Debian"/>
+        <Property name="toolTipText" type="java.lang.String" value="Debian"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator1">

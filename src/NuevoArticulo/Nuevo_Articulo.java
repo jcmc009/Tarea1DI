@@ -6,6 +6,7 @@
 package NuevoArticulo;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -15,14 +16,14 @@ import java.time.format.DateTimeFormatter;
  */
 public class Nuevo_Articulo {
 
-    private String codigoArticulo, nombreArticulo, proveedor, descripcionDetallada;
-    private String[] categoria = {"Ordenador", "Portátil", "Monitor", "Impresora", "Accesorio", "Componente interno", "Otro"};
-    private String[] estadoArticulo = {"Nuevo", "Reacondicionado", "Oferta especial"};
-    private String[] compatibilidad = {"Windows", "Ububtu", "Debian"};
-    private int[] garantia = {12, 24, 0};
+    private String codigoArticulo, nombreArticulo, proveedor, descripcionDetallada, categoria, estadoArticulo, compatibilidad;
+    /*private String[] categoria = {"Ordenador", "Portátil", "Monitor", "Impresora", "Accesorio", "Componente interno", "Otro"};
+     private String[] estadoArticulo = {"Nuevo", "Reacondicionado", "Oferta especial"};
+     private String[] compatibilidad = {"Windows", "Ububtu", "Debian"};*/
+    private String garantia;
     private float precioUnitario;
     private int stockDisponible;
-    private LocalDate fechaEntrada;
+    private Date fechaEntrada;
 
     public String getCodigoArticulo() {
         return codigoArticulo;
@@ -56,35 +57,35 @@ public class Nuevo_Articulo {
         this.descripcionDetallada = descripcionDetallada;
     }
 
-    public String[] getCategoria() {
+    public String getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(String[] categoria) {
+    public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
 
-    public String[] getEstadoArticulo() {
+    public String getEstadoArticulo() {
         return estadoArticulo;
     }
 
-    public void setEstadoArticulo(String[] estadoArticulo) {
+    public void setEstadoArticulo(String estadoArticulo) {
         this.estadoArticulo = estadoArticulo;
     }
 
-    public String[] getCompatibilidad() {
+    public String getCompatibilidad() {
         return compatibilidad;
     }
 
-    public void setCompatibilidad(String[] compatibilidad) {
+    public void setCompatibilidad(String compatibilidad) {
         this.compatibilidad = compatibilidad;
     }
 
-    public int[] getGarantia() {
+    public String getGarantia() {
         return garantia;
     }
 
-    public void setGarantia(int[] garantia) {
+    public void setGarantia(String garantia) {
         this.garantia = garantia;
     }
 
@@ -104,39 +105,44 @@ public class Nuevo_Articulo {
         this.stockDisponible = stockDisponible;
     }
 
-    public LocalDate getFechaEntrada() {
+    public Date getFechaEntrada() {
         return fechaEntrada;
     }
 
-    public void setFechaEntrada(LocalDate fechaEntrada) {
+    public void setFechaEntrada(Date fechaEntrada) {
         this.fechaEntrada = fechaEntrada;
     }
 
-    public Nuevo_Articulo(String codigoArticulo, String nombreArticulo, String proveedor, String descripcionDetallada, float precioUnitario, int stockDisponible, LocalDate fechaEntrada) {
+    public Nuevo_Articulo(String codigoArticulo, String nombreArticulo, String categoria, float precioUnitario, int stockDisponible, String proveedor, Date fechaEntrada, String garantia, String estadoArticulo, String compatibilidad, String descripcionDetallada) {
         this.codigoArticulo = codigoArticulo;
         this.nombreArticulo = nombreArticulo;
+        this.garantia = garantia;
         this.proveedor = proveedor;
         this.descripcionDetallada = descripcionDetallada;
         this.precioUnitario = precioUnitario;
         this.stockDisponible = stockDisponible;
         this.fechaEntrada = fechaEntrada;
+        this.compatibilidad = compatibilidad;
+        this.categoria = categoria;
+        this.estadoArticulo = estadoArticulo;
+
     }
 
     @Override
     public String toString() {
-        DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
         return "Detalles del artículo:\n"
                 + "Código: " + codigoArticulo + "\n"
                 + "Nombre: " + nombreArticulo + "\n"
-                + "Proveedor: " + proveedor + "\n"
-                + "Descripción: " + descripcionDetallada + "\n"
                 + "Categoría: " + categoria + "\n"
+                + "Precio unitario: " + String.format("%.2f €", precioUnitario) + "\n"
+                + "Stock disponible: " + stockDisponible + " unidades\n"
+                + "Proveedor: " + proveedor + "\n"
+                + "Fecha de entrada: " + formatoFecha.format(fechaEntrada) + "\n"
+                + "Garantía: " + garantia + "\n"
                 + "Estado: " + estadoArticulo + "\n"
                 + "Compatibilidad: " + compatibilidad + "\n"
-                + "Garantía: " + garantia + "\n"
-                + String.format("🔹 Precio unitario: %.2f €\n", precioUnitario)
-                + "Stock disponible: " + stockDisponible + " unidades\n"
-                + "Fecha de entrada: " + fechaEntrada.format(formatoFecha);
+                + "Descripción: " + descripcionDetallada;
     }
 
 }
