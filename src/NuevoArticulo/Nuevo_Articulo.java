@@ -142,7 +142,7 @@ public class Nuevo_Articulo {
                 + "Garantía: " + garantia + "\n"
                 + "Estado: " + estadoArticulo + "\n"
                 + "Compatibilidad: " + compatibilidad + "\n"
-                + "Descripción: " + descripcionDetallada;
+                + "Descripción: " + descripcionDetallada+ "\n";
     }
 
 }
